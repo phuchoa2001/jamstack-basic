@@ -1,0 +1,22 @@
+name: Auto Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check if PR is mergeable
+      uses: actions/bin/filter@v1
+      with:
+        args: mergeable == 'true'
+
+    - name: Merge PR
+      uses: actions/pull-request-action@v2
+      with:
+        action: merge
+        commit-message: Automatically merged by GitHub Actions
+        merge-method: merge
