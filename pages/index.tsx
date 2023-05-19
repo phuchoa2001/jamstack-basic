@@ -1,19 +1,18 @@
-import axios from 'axios';
 
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Post from '../interfaces/post'
+import { getData } from '../db/content'
 
 type Props = {
-  allPosts: Post[]
+  allPosts: Post[],
+  data : any[]
 }
 
-export default function Index({ allPosts }: Props) {
-
-  console.log("allPosts", allPosts);
+export default function Index({ allPosts , data }: Props) {
+  console.log("data" , data);
 
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
@@ -44,8 +43,9 @@ export default function Index({ allPosts }: Props) {
 export const getStaticProps = async () => {
   const res = await fetch("https://633fac66d1fcddf69ca7402e.mockapi.io/blog");
   const allPosts = await res.json();
-
+  const data = getData();
+  
   return {
-    props: { allPosts },
+    props: { allPosts , data },
   }
 }

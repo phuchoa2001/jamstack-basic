@@ -1,19 +1,18 @@
 backend:
   name: github
   repo: phuchoa2001/jamstack-basic
-  # optional, defaults to master
-  # branch: main
+  branch: main
 
 local_backend: true
 
 publish_mode: editorial_workflow
 
-media_folder: "img/uploads"
-public_folder: "img"
+media_folder: "image/uploads"
+public_folder: "image"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "article" # Used in the UI
+    label: "blog" # Used in the UI
     folder: "content" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
