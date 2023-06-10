@@ -1,5 +1,6 @@
 ---
 title: "* Danh từ tổng quát Phần 2"
+desc: Hello
 author: Đặng Phúc Hòa
 date: 2023-06-11T04:28:44.130Z
 category: test
