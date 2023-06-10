@@ -3,7 +3,7 @@ title: "* Danh từ tổng quát "
 author: Đặng Phúc Hòa
 date: 2023-06-10T03:56:26.555Z
 category: "Tin tức "
-image: https://images.unsplash.com/photo-1685942962211-bdae665b7a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60
+image: https://images.unsplash.com/photo-1580634718819-5986efba23e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80
 tags:
   - "Hello "
   - hello
