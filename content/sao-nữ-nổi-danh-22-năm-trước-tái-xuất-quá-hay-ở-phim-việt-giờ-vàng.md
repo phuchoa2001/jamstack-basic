@@ -9,4 +9,4 @@ type: Trong phim, nữ diễn viên Kiều Anh xuất hiện với vai Phương,
 
 <!--EndFragment-->
 
-![](img/group-8-1-.png)
+*   ![](https://plus.unsplash.com/premium_photo-1686149833505-0fe209f61a67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60)
