@@ -8,7 +8,7 @@ image: https://images.unsplash.com/photo-1580634718819-5986efba23e1?ixlib=rb-4.0
 tags:
   - "Hello "
   - hello
-slug: /Blog
+slug: Blog
 status: published
 ---
 * Danh từ tổng quát 
