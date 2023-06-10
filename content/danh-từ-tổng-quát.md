@@ -1,5 +1,6 @@
 ---
 title: "* Danh từ tổng quát "
+desc: hello
 author: Đặng Phúc Hòa
 date: 2023-06-10T03:56:26.555Z
 category: "Tin tức "
