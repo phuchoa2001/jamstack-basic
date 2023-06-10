@@ -17,14 +17,79 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "ID", name: "id", widget: "string", hint: "Auto-generated ID", required: true, default: "{{slugify title}}", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Invalid ID format"] }
-      - { label: "Title", name: "title", widget: "string", hint: "Enter the title of the blog post", required: true }
-      - { label: "Description", name: "desc", widget: "text", hint: "Enter the description of the blog post", required: true }
-      - { label: "Content", name: "body", widget: "markdown", hint: "Write the detailed content of the blog post", required: true }
-      - { label: "Author", name: "author", widget: "string", hint: "Enter the author of the blog post", default: "Đặng Phúc Hòa" }
-      - { label: "Date", name: "date", widget: "datetime", hint: "Select the publishing date and time of the blog post", required: true }
-      - { label: "Category", name: "category", widget: "string", hint: "Enter the category or topic of the blog post", required: true }
-      - { label: "Image", name: "image", widget: "string", hint: "Enter the path to the featured image", required: true }
-      - { label: "Tags", name: "tags", widget: "list", field: { name: "tag", label: "Tag", widget: "string" }, hint: "Enter keywords or tags for categorizing the blog post" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Enter a unique URL slug for the blog post", required: true }
-      - { label: "Status", name: "status", widget: "select", options: [{ label: "Published", value: "published" }, { label: "Draft", value: "draft" }, { label: "Hidden", value: "hidden" }], hint: "Select the current status of the blog post", default: "draft" }
+      - {
+          label: "Tiêu đề",
+          name: "title",
+          widget: "string",
+          hint: "Nhập tiêu đề bài viết",
+          required: true,
+        }
+      - {
+          label: "Mô tả",
+          name: "desc",
+          widget: "text",
+          hint: "Nhập mô tả bài viết",
+          required: true,
+        }
+      - {
+          label: "Nội dung",
+          name: "body",
+          widget: "markdown",
+          hint: "Viết nội dung chi tiết của bài viết",
+          required: true,
+        }
+      - {
+          label: "Tác giả",
+          name: "author",
+          widget: "string",
+          hint: "Nhập tên tác giả",
+          default: "Đặng Phúc Hòa",
+        }
+      - {
+          label: "Ngày",
+          name: "date",
+          widget: "datetime",
+          hint: "Chọn ngày và giờ đăng bài viết",
+          required: true,
+        }
+      - {
+          label: "Danh mục",
+          name: "category",
+          widget: "string",
+          hint: "Nhập danh mục hoặc chủ đề của bài viết",
+          required: true,
+        }
+      - {
+          label: "Hình ảnh",
+          name: "image",
+          widget: "string",
+          hint: "Nhập đường dẫn đến hình ảnh đại diện",
+          required: true,
+        }
+      - {
+          label: "Thẻ (Tags)",
+          name: "tags",
+          widget: "list",
+          field: { name: "tag", label: "Tag", widget: "string" },
+          hint: "Nhập từ khóa hoặc thẻ phân loại bài viết . lấy slug bằng cách /api/getslug?title=title",
+        }
+      - {
+          label: "URL duy nhất",
+          name: "slug",
+          widget: "string",
+          hint: "Nhập URL duy nhất cho bài viết",
+          required: true,
+        }
+      - {
+          label: "Trạng thái",
+          name: "status",
+          widget: "select",
+          options:
+            [
+              { label: "Đã xuất bản", value: "published" },
+              { label: "Nháp", value: "draft" },
+              { label: "Ẩn", value: "hidden" },
+            ],
+          hint: "Chọn trạng thái hiện tại của bài viết",
+          default: "draft",
+        }

@@ -13,6 +13,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import { linkAvatar } from '../../contant/userName';
 import PostSuggestion from '../../components/PostSuggestion';
+import HeaderSeo from '../../components/HeaderSeo';
 
 type Props = {
   post: any
@@ -36,9 +37,11 @@ export default function Post({ post, currentBlog }: Props) {
           <>
             <article className="mb-32">
               <Head>
-                <title>
-                  {blog.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
+                <HeaderSeo
+                  title={blog.title}
+                  image={blog.image}
+                  desc={blog.desc}
+                />
               </Head>
               <PostHeader
                 title={blog.title}

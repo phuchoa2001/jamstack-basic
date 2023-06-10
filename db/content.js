@@ -6,8 +6,8 @@ export function getData() {
   const contentDir = path.join(process.cwd(), 'content');
   const fileTypes = ['.md'];
 
-  const files = getFilesFromDirectory(contentDir, fileTypes);
-
+  const files = getFilesFromDirectory(contentDir, fileTypes) || [];
+  
   const fileContents = files.map((filePath) => {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
@@ -18,7 +18,7 @@ export function getData() {
     };
   });
 
-  return fileContents;
+  return fileContents || [];
 }
 
 export function getItemBySlug(slug) {

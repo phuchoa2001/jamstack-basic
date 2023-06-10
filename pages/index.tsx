@@ -7,7 +7,7 @@ import { getData } from '../db/content'
 import { linkAvatar } from '../contant/userName'
 
 type Props = {
-  data : string
+  data: string
 }
 
 export default function Index({ data }: Props) {
@@ -16,8 +16,12 @@ export default function Index({ data }: Props) {
 
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  
-  console.log("heroPost" , heroPost.frontmatter.tags);
+
+  if (allPosts.length === 0) {
+    return <div style={{ width: 1200, margin: "auto", height: "50px", paddingTop: 10 }}>
+      Không có dữ liệu
+    </div>
+  }
 
   return (
     <>
@@ -45,9 +49,9 @@ export default function Index({ data }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const data = JSON.stringify (getData());
+  const data = JSON.stringify(getData()) || [];
 
   return {
-    props: { data : data },
+    props: { data: data },
   }
 }
