@@ -5,7 +5,7 @@ desc: Danh từ trong tiếng Anh có những vị trí và vai trò khác nhau 
 author: Đặng Phúc Hòa
 date: 2023-06-10T09:24:23.460Z
 category: "Học tiếng anh "
-image: https://images.unsplash.com/photo-1622600450397-7d28ea1f985e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aCVFMSVCQiU4RGMlMjB0aSVFMSVCQSVCRm5nJTIwYW5ofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60
+image: https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2xhc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
 tags:
   - "tiếng anh "
   - "học "
