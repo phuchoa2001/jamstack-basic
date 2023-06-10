@@ -21,6 +21,29 @@ export function getData() {
   return fileContents;
 }
 
+export function getItemBySlug(slug) {
+  const contentDir = path.join(process.cwd(), 'content');
+  const fileTypes = ['.md'];
+  const files = getFilesFromDirectory(contentDir, fileTypes);
+
+  for (const filePath of files) {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data } = matter(fileContent);
+
+    if (data.slug === slug) {
+      const { content } = matter(fileContent);
+
+      return {
+        frontmatter: data,
+        markdownContent: content,
+      };
+    }
+  }
+
+  return null; // Trả về null nếu không tìm thấy item với slug tương ứng
+}
+
+
 function getFilesFromDirectory(dir, fileTypes, filesList = []) {
   const files = fs.readdirSync(dir);
 

@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['https://cloudflare-ipfs.com'  , 'loremflickr.com'],
+    domains: ['images.unsplash.com', 'loremflickr.com' , 'res.cloudinary.com'],
   },
 };

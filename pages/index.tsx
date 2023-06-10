@@ -3,34 +3,38 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Layout from '../components/layout'
-import Post from '../interfaces/post'
 import { getData } from '../db/content'
+import { linkAvatar } from '../contant/userName'
 
 type Props = {
-  allPosts: Post[],
-  data : any[]
+  data : string
 }
 
-export default function Index({ allPosts , data }: Props) {
-  console.log("data" , data);
+export default function Index({ data }: Props) {
 
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const allPosts = JSON.parse(data);
+
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+  
+  console.log("heroPost" , heroPost.frontmatter.tags);
+
   return (
     <>
       <Layout>
         <Container>
           {heroPost && (
             <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
+              title={heroPost.frontmatter.title}
+              coverImage={heroPost.frontmatter.image}
+              date={heroPost.frontmatter.date}
               author={{
-                name: "JJ Kasper",
-                picture: "/assets/blog/authors/jj.jpeg"
+                name: heroPost.frontmatter.author,
+                picture: linkAvatar
               }}
-              slug={"/" + heroPost.slug}
-              excerpt={heroPost.excerpt}
+              tags={heroPost.frontmatter.tags}
+              slug={"/" + heroPost.frontmatter.slug}
+              excerpt={heroPost.frontmatter.desc}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
@@ -41,11 +45,9 @@ export default function Index({ allPosts , data }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://633fac66d1fcddf69ca7402e.mockapi.io/blog");
-  const allPosts = await res.json();
-  const data = getData();
-  
+  const data = JSON.stringify (getData());
+
   return {
-    props: { allPosts , data },
+    props: { data : data },
   }
 }

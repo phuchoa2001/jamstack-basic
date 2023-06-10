@@ -1,8 +1,10 @@
+import { Space, Tag } from 'antd';
 import Avatar from './avatar'
-import DateFormatter from './date-formatter'
+import moment from 'moment'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import { DATE_DISPLAY_FORMAT } from '../contant/dateFormats'
 
 type Props = {
   title: string
@@ -11,6 +13,7 @@ type Props = {
   excerpt: string
   author: Author
   slug: string
+  tags: string[]
 }
 
 const PostPreview = ({
@@ -20,6 +23,7 @@ const PostPreview = ({
   excerpt,
   author,
   slug,
+  tags
 }: Props) => {
   return (
     <div>
@@ -35,8 +39,17 @@ const PostPreview = ({
           {title}
         </Link>
       </h3>
+      <div className='my-2'>
+        <Space size={[0, 8]} wrap>
+          {tags.map((item) => (
+            <Tag>
+              {item}
+            </Tag>
+          ))}
+        </Space>
+      </div>
       <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+        {moment(date).format(DATE_DISPLAY_FORMAT)}
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />

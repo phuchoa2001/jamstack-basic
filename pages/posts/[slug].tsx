@@ -1,32 +1,33 @@
 import axios from 'axios';
 
 import { useRouter } from 'next/router'
+import { getItemBySlug, getData } from '../../db/content';
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
-import type PostType from '../../interfaces/post'
+import { linkAvatar } from '../../contant/userName';
+import PostSuggestion from '../../components/PostSuggestion';
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
-  preview?: boolean
+  post: any
+  currentBlog: any
 }
 
-export default function Post({ post, morePosts, preview }: Props) {
+export default function Post({ post, currentBlog }: Props) {
+  const blog = JSON.parse(post);
+
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -36,19 +37,22 @@ export default function Post({ post, morePosts, preview }: Props) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {blog.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
+                title={blog.title}
+                coverImage={blog.image}
+                date={blog.date}
+                desc={blog.desc}
+                tags={blog.tags}
                 author={{
-                    name: "JJ Kasper",
-                    picture: "/assets/blog/authors/jj.jpeg"
-                  }}
+                  name: blog.author,
+                  picture: linkAvatar
+                }}
               />
-              <PostBody content={post.content} />
+              <PostBody content={blog.markdownContent} />
+              <PostSuggestion post={JSON.parse(currentBlog)} />
             </article>
           </>
         )}
@@ -64,28 +68,26 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const res = await fetch(`https://633fac66d1fcddf69ca7402e.mockapi.io/blog?slug=${params.slug}`);
-  const post = await res.json();
-
+  const post = getItemBySlug(params.slug);
   return {
     props: {
-      post: {
-        ...post[0]
-      },
+      post: JSON.stringify({
+        ...post,
+        ...post?.frontmatter,
+      }),
+      currentBlog: JSON.stringify(post)
     },
   }
 }
 
 export async function getStaticPaths() {
-
-  const res = await fetch("https://633fac66d1fcddf69ca7402e.mockapi.io/blog");
-  const allPosts = await res.json();
+  const data = getData();
 
   return {
-    paths: allPosts.map((post) => {
+    paths: data.map((post) => {
       return {
         params: {
-          slug: post.slug,
+          slug: post.frontmatter.slug,
         },
       }
     }),

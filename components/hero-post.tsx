@@ -1,8 +1,10 @@
+import { Space, Tag } from 'antd';
 import Avatar from './avatar'
-import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
+import moment from "moment"
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import { DATE_DISPLAY_FORMAT } from '../contant/dateFormats'
 
 type Props = {
   title: string
@@ -10,7 +12,8 @@ type Props = {
   date: string
   excerpt: string
   author: Author
-  slug: string
+  slug: string,
+  tags: string[]
 }
 
 const HeroPost = ({
@@ -20,6 +23,7 @@ const HeroPost = ({
   excerpt,
   author,
   slug,
+  tags
 }: Props) => {
   return (
     <section>
@@ -37,8 +41,17 @@ const HeroPost = ({
               {title}
             </Link>
           </h3>
+          <div className='my-2'>
+            <Space size={[0, 8]} wrap>
+              {tags.map((item) => (
+                <Tag>
+                  {item}
+                </Tag>
+              ))}
+            </Space>
+          </div>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            {moment(date).format(DATE_DISPLAY_FORMAT)}
           </div>
         </div>
         <div>
