@@ -1,10 +1,10 @@
 import { Space, Tag } from 'antd';
-import Avatar from './avatar'
 import moment from 'moment'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
 import { DATE_DISPLAY_FORMAT } from '../contant/dateFormats'
+import { readTime , convertMarkdownToHTML } from '../utils/blog';
 
 type Props = {
   title: string
@@ -12,6 +12,7 @@ type Props = {
   date: string
   excerpt: string
   author: Author
+  content: string
   slug: string
   tags: string[]
 }
@@ -21,9 +22,13 @@ const PostPreview = ({
   coverImage,
   date,
   excerpt,
+  content,
   slug,
   tags
 }: Props) => {
+  const htmlContent = convertMarkdownToHTML(content);
+  const result = readTime(htmlContent);
+
   return (
     <div>
       <div className="mb-5">
@@ -38,9 +43,10 @@ const PostPreview = ({
           {title}
         </Link>
       </h3>
+      <div className='mb-4'>Thời gian đọc: {result.readingTimeVi}</div>
       <div className='my-2'>
         <Space size={[0, 8]} wrap>
-          {tags.map((item , index) => (
+          {tags.map((item, index) => (
             <Tag key={index}>
               {item}
             </Tag>

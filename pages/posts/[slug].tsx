@@ -47,6 +47,7 @@ export default function Post({ post, currentBlog }: Props) {
                 date={blog.date}
                 desc={blog.desc}
                 tags={blog.tags}
+                content={blog.markdownContent}
                 author={{
                   name: blog.author,
                   picture: linkAvatar

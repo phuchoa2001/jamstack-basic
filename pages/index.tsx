@@ -36,6 +36,7 @@ export default function Index({ data }: Props) {
                 name: heroPost.frontmatter.author,
                 picture: linkAvatar
               }}
+              content={heroPost.markdownContent}
               tags={heroPost.frontmatter.tags}
               slug={"/" + heroPost.frontmatter.slug}
               excerpt={heroPost.frontmatter.desc}

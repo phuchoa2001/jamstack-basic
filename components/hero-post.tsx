@@ -4,6 +4,7 @@ import CoverImage from './cover-image'
 import moment from "moment"
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import { convertMarkdownToHTML, readTime } from '../utils/blog';
 import { DATE_DISPLAY_FORMAT } from '../contant/dateFormats'
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
   excerpt: string
   author: Author
   slug: string,
+  content: string,
   tags: string[]
 }
 
@@ -21,10 +23,15 @@ const HeroPost = ({
   coverImage,
   date,
   excerpt,
+  content,
   author,
   slug,
   tags
 }: Props) => {
+
+  const htmlContent = convertMarkdownToHTML(content);
+  const result = readTime(htmlContent);
+
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -41,6 +48,7 @@ const HeroPost = ({
               {title}
             </Link>
           </h3>
+          <div className='mb-4'>Thời gian đọc: {result.readingTimeVi}</div>
           <div className='my-2'>
             <Space size={[0, 8]} wrap>
               {tags.map((item) => (

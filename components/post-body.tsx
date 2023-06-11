@@ -14,7 +14,7 @@ type Props = {
 const PostBody = ({ content }: Props) => {
   const htmlContent = convertMarkdownToHTML(content);
   return (
-    <div className="w-100">
+    <div className="w-100 pb-4">
       <div
         className={markdownStyles['markdown']}
         dangerouslySetInnerHTML={{ __html: htmlContent }}

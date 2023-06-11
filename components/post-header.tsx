@@ -5,20 +5,28 @@ import CoverImage from './cover-image'
 import PostTitle from './post-title'
 import type Author from '../interfaces/author'
 import { DATE_DISPLAY_FORMAT } from '../contant/dateFormats'
+import { readTime , convertMarkdownToHTML } from '../utils/blog';
 
 type Props = {
   title: string
   coverImage: string
   date: string,
   desc: string,
+  content: string,
   author: Author,
   tags: string[]
 }
 
-const PostHeader = ({ title, coverImage, date, author, desc, tags }: Props) => {
+
+
+const PostHeader = ({ title, coverImage, date, author, desc, content, tags }: Props) => {
+  const htmlContent = convertMarkdownToHTML(content);
+  const result = readTime(htmlContent);
+
   return (
     <>
       <PostTitle>{title}</PostTitle>
+      <div className='mb-4'>Thời gian đọc: {result.readingTimeVi}</div>
       <div className='my-2'>
         <Space size={[0, 8]} wrap>
           {tags.map((item) => (

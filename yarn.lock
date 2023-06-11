@@ -1730,6 +1730,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+"react-read-time@^0.1.6":
+  "integrity" "sha512-/GI07pmCu+eaTAQz+MFvAO+oj/a/0hNybagDGf1X03iO9dcI+PvhxSpIJLKYvgE2PTX07X2oaJypoJ/k6Wciyg=="
+  "resolved" "https://registry.npmjs.org/react-read-time/-/react-read-time-0.1.6.tgz"
+  "version" "0.1.6"
+
 "react@*", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.9.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
@@ -1750,6 +1755,11 @@
   "version" "3.6.0"
   dependencies:
     "picomatch" "^2.2.1"
+
+"reading-time@^1.5.0":
+  "integrity" "sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg=="
+  "resolved" "https://registry.npmjs.org/reading-time/-/reading-time-1.5.0.tgz"
+  "version" "1.5.0"
 
 "regenerator-runtime@^0.13.11":
   "integrity" "sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg=="
