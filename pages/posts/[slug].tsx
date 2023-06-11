@@ -53,7 +53,7 @@ export default function Post({ post, currentBlog }: Props) {
                 }}
               />
               <PostBody content={blog.markdownContent} />
-              <PostSuggestion post={JSON.parse(currentBlog)} />
+              {/* <PostSuggestion post={JSON.parse(currentBlog)} /> */}
             </article>
           </>
         )}
