@@ -58,7 +58,7 @@ const MoreStories = ({ posts }: Props) => {
 				Danh sách bài viết
 			</h2>
 			<Row gutter={[16, 8]}>
-				<Col className="mb-4" span={24} md={18}>
+				<Col className="mb-4" span={24} lg={18}>
 					<Input.Search
 						placeholder="Tìm kiếm theo tên"
 						value={searchName}
@@ -66,30 +66,34 @@ const MoreStories = ({ posts }: Props) => {
 						onSearch={handleSearch}
 					/>
 				</Col>
-				<Col className="mb-8" span={24} md={6}>
+				<Col className="mb-8" span={24} lg={6}>
 					<Select
 						placeholder="Tìm kiếm theo danh mục"
 						value={searchCategory}
 						className='w-full'
 						onChange={handleCategorySearch}
 					>
-						<Option value="">Tất cả</Option>
-						<Option value="category1">Danh mục 1</Option>
-						<Option value="category2">Danh mục 2</Option>
-						<Option value="category3">Danh mục 3</Option>
-						{/* Thêm các option cho danh mục khác */}
+						<Option key={""} value={""}>
+							Tất cả
+						</Option>
+						{posts.map((post) => (
+							<Option key={post.frontmatter.category} value={post.frontmatter.category}>
+								{post.frontmatter.category}
+							</Option>
+						))}
 					</Select>
 				</Col>
 			</Row>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
 				{currentPosts.map((post) => {
 					if (!post) {
-						return <></>;
+						return <div key={post.frontmatter.slug}></div>;
 					}
 
 					return (
 						<Col className="mb-4" span={24} md={18} key={post.slug}>
 							<PostPreview
+								key={post.frontmatter.slug}
 								title={post.frontmatter.title}
 								coverImage={post.frontmatter.image}
 								date={post.date}

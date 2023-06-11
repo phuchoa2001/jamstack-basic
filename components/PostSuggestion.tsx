@@ -26,8 +26,6 @@ function PostSuggestion(props: Props) {
 		fetchData();
 	}, []);
 
-	console.log("listSuggested", listSuggested);
-
 	return (
 		<section>
 			<h2 className="mb-8 text-3xl md:text-4xl font-bold tracking-tighter leading-tight my-4">
@@ -37,12 +35,12 @@ function PostSuggestion(props: Props) {
 				{listSuggested.map((post) => {
 
 					if (!post) {
-						return <></>
+						return <div key={post.frontmatter.slug}></div>
 					}
 
 					return (
 						<PostPreview
-							key={post.slug}
+							key={post.frontmatter.slug}
 							title={post.frontmatter.title}
 							coverImage={post.frontmatter.image}
 							date={post.date}

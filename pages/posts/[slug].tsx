@@ -10,7 +10,6 @@ import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
 import { linkAvatar } from '../../contant/userName';
 import PostSuggestion from '../../components/PostSuggestion';
 import HeaderSeo from '../../components/HeaderSeo';
@@ -22,13 +21,19 @@ type Props = {
 
 export default function Post({ post, currentBlog }: Props) {
   const blog = JSON.parse(post);
-
   const router = useRouter()
   if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout>
+    <Layout isMeta={false} >
+      <Head>
+        <HeaderSeo
+          title={blog?.title}
+          image={blog?.image}
+          desc={blog?.desc}
+        />
+      </Head>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -36,13 +41,6 @@ export default function Post({ post, currentBlog }: Props) {
         ) : (
           <>
             <article className="mb-32">
-              <Head>
-                <HeaderSeo
-                  title={blog.title}
-                  image={blog.image}
-                  desc={blog.desc}
-                />
-              </Head>
               <PostHeader
                 title={blog.title}
                 coverImage={blog.image}

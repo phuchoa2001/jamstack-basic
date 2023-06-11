@@ -21,7 +21,6 @@ const PostPreview = ({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
   tags
 }: Props) => {
@@ -41,8 +40,8 @@ const PostPreview = ({
       </h3>
       <div className='my-2'>
         <Space size={[0, 8]} wrap>
-          {tags.map((item) => (
-            <Tag>
+          {tags.map((item , index) => (
+            <Tag key={index}>
               {item}
             </Tag>
           ))}

@@ -22,7 +22,7 @@ const PostHeader = ({ title, coverImage, date, author, desc, tags }: Props) => {
       <div className='my-2'>
         <Space size={[0, 8]} wrap>
           {tags.map((item) => (
-            <Tag>
+            <Tag key={item}>
               {item}
             </Tag>
           ))}

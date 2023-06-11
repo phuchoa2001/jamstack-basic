@@ -3,13 +3,14 @@ import Meta from './meta'
 
 type Props = {
   preview?: boolean
+  isMeta?: boolean
   children: React.ReactNode
 }
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ preview, children , isMeta  }: Props) => {
   return (
     <>
-      <Meta />
+      <Meta isMeta={isMeta} />
       <div className="min-h-screen">
         <main>{children}</main>
       </div>
