@@ -6,7 +6,7 @@ desc: Danh từ trong tiếng Anh là loại từ dùng để đặt tên cho ng
 author: Đặng Phúc Hòa
 date: 2023-06-10T09:40:01.718Z
 category: "Học tiếng anh "
-image: https://images.unsplash.com/photo-1625511857514-c38370336917?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1163&q=80
+image: https://i.pinimg.com/564x/85/aa/33/85aa3350587cfe4b6d367b3903dedd50.jpg
 tags:
   - Học
   - "Tiếng anh "
