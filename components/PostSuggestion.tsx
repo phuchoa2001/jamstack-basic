@@ -45,6 +45,7 @@ function PostSuggestion(props: Props) {
 							coverImage={post.frontmatter.image}
 							date={post.date}
 							tags={post.frontmatter.tags}
+              content={post.markdownContent}
 							author={{
 								name: post.frontmatter.author,
 								picture: linkAvatar
