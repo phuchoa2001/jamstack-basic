@@ -16,8 +16,6 @@ slug: Lam the nao de thiet lap mot du an front-end chuyen
   nghiepid=52294851753606410000
 status: published
 ---
-<!--StartFragment-->
-
 **1. Chọn Framework hoặc Library**
 
 Các công nghệ như React, Vue, Angular, hoặc Svelte đều là những lựa chọn tuyệt vời để xây dựng giao diện người dùng. Lựa chọn của bạn sẽ phụ thuộc vào yêu cầu của dự án và sự thoải mái khi làm việc với mỗi công nghệ.
@@ -63,5 +61,3 @@ Sử dụng các công cụ như Jenkins, GitHub Actions, hoặc GitLab CI để
 NPM hoặc Yarn là những công cụ phổ biến để quản lý các thư viện và gói mà dự án của bạn phụ thuộc vào.
 
 Với mỗi dự án, lựa chọn công cụ và thư viện sẽ khác nhau. Tuy nhiên, quan trọng nhất là luôn đảm bảo rằng dự án của bạn tuân thủ các tiêu chuẩn chất lượng mã và cung cấp một trải nghiệm tốt cho người dùng cuối.
-
-<!--EndFragment-->
