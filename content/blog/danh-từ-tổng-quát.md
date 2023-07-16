@@ -1,5 +1,5 @@
 ---
-title: Danh từ tổng quát  2
+title: Danh từ tổng quát  10
 desc: Danh từ trong tiếng Anh là loại từ dùng để đặt tên cho người, đồ vật, sự
   việc và địa điểm. Danh từ được chia thành hai loại chính là danh từ đếm được
   và danh từ không đếm được.
