@@ -1,5 +1,5 @@
 ---
-title: Làm thế nào để thiết lập một dự án front-end chuyên nghiệp ?
+title: Làm thế nào để thiết lập một dự án front-end chuyên nghiệp 2 ?
 desc: Xin chào mọi người! Hôm nay, chúng ta sẽ nói về việc thiết lập một dự án
   front-end chuyên nghiệp. Chúng ta sẽ đi qua từng bước để thiết lập các công cụ
   và thư viện cần thiết.
@@ -11,8 +11,7 @@ tags:
   - Lập trình viên
   - "React "
   - Nodejs
-slug: Lam the nao de thiet lap mot du an front-end chuyen nghiep
-  ?id=13854390729152442000
+slug: Lamthenaodethietlapmotduanfront-endchuyennghiep?id=13854390729152442000
 status: published
 ---
 <!--StartFragment-->
