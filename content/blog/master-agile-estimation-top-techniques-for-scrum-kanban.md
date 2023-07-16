@@ -6,7 +6,7 @@ desc: Xin chào mọi người! Hôm nay, chúng ta sẽ nói về việc thiế
 author: Đặng Phúc Hòa
 date: 2023-07-16T08:01:40.313Z
 category: Lập trình viên , setup dự án , React , Nodejs
-image: https://i.pinimg.com/564x/96/69/c9/9669c9eddeed2dcd8661e465eb681250.jpg
+image: https://res.cloudinary.com/xoanen1202/image/upload/v1689503818/Setup_d%E1%BB%B1_%C3%A1n_rzqsgu.jpg
 tags:
   - Lập trình viên
   - "React "
