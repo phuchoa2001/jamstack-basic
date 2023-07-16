@@ -11,7 +11,8 @@ tags:
   - Lập trình viên
   - "React "
   - Nodejs
-slug: https://res.cloudinary.com/xoanen1202/image/upload/v1689503818/Setup_d%E1%BB%B1_%C3%A1n_rzqsgu.jpg
+slug: Lam the nao de thiet lap mot du an front-end chuyen nghiep
+  ?id=13854390729152442000
 status: published
 ---
 <!--StartFragment-->
