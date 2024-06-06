@@ -11,9 +11,6 @@ desc: >-
 
 
   Bài viết chia sẻ những bài học quý giá về giá trị của cả làm việc độc lập và làm việc nhóm, cũng như tầm quan trọng của việc cân bằng giữa các vai trò khác nhau trong cuộc sống. Tác giả cũng thẳng thắn chia sẻ những khó khăn và thử thách mà mình đã trải qua trong quá trình tìm kiếm sự cân bằng đó.
-
-
-  Với giọng văn chân thành và gần gũi, bài viết không chỉ là một câu chuyện cá nhân mà còn là một lời nhắn nhủ đến độc giả: Hãy cởi mở, linh hoạt và không ngừng khám phá bản thân để tìm ra con đường riêng của mình.
 author: Đặng Phúc Hòa
 date: 2024-06-06T11:27:04.553Z
 category: Đặng Phúc Hòa
